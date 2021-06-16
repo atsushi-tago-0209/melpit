@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Seeder;
 use App\Models\SecondaryCategory;
 
-class SecondaryCategory extends Model
+class SecondaryCategorySeeder extends Seeder
 {
-      /**
+    /**
      * Run the database seeds.
      *
      * @return void
