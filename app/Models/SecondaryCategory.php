@@ -7,7 +7,11 @@ use App\Models\SecondaryCategory;
 
 class SecondaryCategory extends Model
 {
-      /**
+    public function primaryCategory()
+    {
+        return $this->belongsTo(PrimaryCategory::class);
+    }
+    /**
      * Run the database seeds.
      *
      * @return void
