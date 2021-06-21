@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('items/{item}', 'ItemsController@showItemDetail')->name('item');
 
 Route::middleware('auth')->group(function(){
-    Route::get('items/{item}/buy',function(){return "商品購入画面";})->name('item.buy');
+    Route::get('items/{item}/buy','ItemsController@showBuyItemForm')->name('item.buy');
+    Route::post('items/{item}/buy', 'ItemsController@buyItem')->name('item.buy');
+    Route::get('bought-items','BoughtItemsController@showBuyItems')->name('mypage.bought-items');
 
     Route::get('sell','SellController@showSellForm')->name('sell');
     Route::post('sell','SellController@sellItem')->name('sell');
